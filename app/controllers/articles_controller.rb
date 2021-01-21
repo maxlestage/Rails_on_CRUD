@@ -41,6 +41,12 @@ class ArticlesController < ApplicationController
 
   # Partie Destroy
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+      # Une fois l'élément détruit, l'action nous renvoie à la racine du projet.
+    redirect_to root_path
+  end
 
 
 
